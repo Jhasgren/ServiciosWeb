@@ -5,8 +5,6 @@
  */
 package com.unlimitedappworks.serviciosweb.SW;
 
-import android.util.Log;
-
 import java.io.InputStream;
 import java.net.URL;
 import java.net.URLConnection;
@@ -32,7 +30,7 @@ public class Enlace extends EnlaceAdapter {
             @Override
             public void run() {
                 try {
-                    URLConnection c = (URLConnection) new URL(Enlace.this.direccion).openConnection();
+                    URLConnection c = new URL(Enlace.this.direccion).openConnection();
                     c.setConnectTimeout(5000);
                     InputStream is = (InputStream) c.getContent();
                     StringBuilder sb = new StringBuilder();
